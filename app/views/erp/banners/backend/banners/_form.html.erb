@@ -1,0 +1,73 @@
+<%= form_for([erp_banners, :backend, banner], html: {multipart: true}) do |f| %>
+    <div class="form-body">
+        <div class="portlet light bordered">
+            <div class="portlet-body form">
+                <div class="row">
+                    <div class="col-md-2">
+                        <%= erp_form_control('image', {
+                            img_src: banner.image_url.smaller,
+                            name: 'banner[image_url]',
+                            width: 150,
+                            height: 150
+                        }) %>
+                    </div>
+                    <div class="col-md-10">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <%= erp_form_control("text", {
+                                    name: 'banner[name]',
+                                    value: banner.name,                   
+                                    label: t('.name'),
+                                    placeholder: t('.enter_name'),
+                                    required: true,
+                                    errors: banner.errors.full_messages_for(:name)
+                                }) %>
+                            </div>
+                            <div class="col-md-6">
+                                <%= erp_form_control("dataselect", {
+                                    name: 'banner[category_id]',
+                                    value: banner.category_id,
+                                    text: banner.category_name,
+                                    placeholder: t('.choose_category'),
+                                    label: t('.category'),
+                                    url: erp_banners.dataselect_backend_categories_path(format: 'json'),
+                                    create: {
+                                        url: erp_banners.new_backend_category_path,
+                                        title: t('.create_category'),
+                                        container_selector: '.new_category',
+                                        input_selector: 'input[name="category[name]"]'
+                                    },
+                                    edit: {
+                                        url: erp_banners.edit_backend_category_path(id: ':value'),
+                                        title: t('.edit_category'),
+                                        container_selector: '.edit_category',
+                                    },
+                                    required: true,
+                                    errors: banner.errors.full_messages_for(:category_id)
+                                }) %>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-12">
+                                <%= erp_form_control("textarea", {
+                                    name: 'banner[link_url]',
+                                    value: banner.link_url,                   
+                                    label: t('.link_url'),
+                                    placeholder: t('.enter_link_url')
+                                }) %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%= erp_component('button/save', {
+        text: t('submit')
+    }) %>
+    <%= erp_component('button/cancel', {
+        text: t('cancel'),
+        href: erp_banners.backend_banners_path
+    }) %>
+<% end %>

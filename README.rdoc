@@ -1,0 +1,3 @@
+= Erp::Banners
+
+This project rocks and uses MIT-LICENSE.

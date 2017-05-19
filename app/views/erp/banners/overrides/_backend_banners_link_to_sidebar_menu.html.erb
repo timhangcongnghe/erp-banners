@@ -1,0 +1,24 @@
+<li class="nav-item <%= "active open" if ["erp/banners/backend/banners", "erp/banners/backend/categories"].include?(params[:controller]) %>">
+    <a href="javascript:;" class="nav-link nav-toggle">
+        <i class="fa fa-image"></i>
+        <span class="title"><%= t('.banner') %></span>
+        <% if ["erp/banners/backend/banners", "erp/banners/backend/categories"].include?(params[:controller]) %>
+            <span class="selected"></span>
+            <span class="arrow open"></span>
+        <% else %>
+            <span class="arrow"></span>
+        <% end %>
+    </a>
+    <ul class="sub-menu">
+        <li class="nav-item">
+            <a href="<%= erp_banners.backend_banners_path %>" class="nav-link">
+                <span class="title"><%= t('.banners') %></span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="<%= erp_banners.backend_categories_path %>" class="nav-link">
+                <span class="title"><%= t('.categories') %></span>
+            </a>
+        </li>
+    </ul>
+</li>

@@ -1,0 +1,141 @@
+vi:
+  fit: "fit"
+  fill: "fill"
+  layouts:
+    erp:
+      backend:
+        sidebar:
+          banner: "Quản lý banner"
+          banners: "Tất cả banner"
+  erp:
+    banners:
+      backend:
+        banners:
+          create:
+            success: "Thêm banner thành công."
+          update:
+            success: "Banner đã được cập nhật."
+          destroy:
+            success: "Xóa banner thành công."
+          delete_all:
+            success: "Các banner vừa chọn đã được xóa thành công."
+          archive: 
+            success: "Banner đã được ngưng sử dụng."
+          unarchive: 
+            success: "Banner đã sẵn sàng để sử dụng lại."
+          archive_all: 
+            success: "Các banner vừa chọn đã được ngưng sử dụng."
+          unarchive_all: 
+            success: "Các banner vừa chọn đã sẵn sàng để sử dụng lại."
+          index:
+            banners: "Tất cả banner"
+            create: "Thêm banner"
+            image: "Hình ảnh"
+            name: "Tên banner"
+            scale: "Chuyên mục/kiểu banner"
+            link_url: "Link URL"
+            category: "Chuyên mục"
+            archive_confirm: "Bạn có muốn ngừng sử dụng các banner này?"
+            unarchive_confirm: "Bạn có muốn sử dụng lại các banner này?"
+            delete: "Xóa banner"
+          list:
+            image: "Hình ảnh"
+            name: "Tên banner"
+            link_url: "Linh URL"
+            no_matching_records_found: "Danh sách banner không được tìm thấy"
+            archive_confirm: "Bạn có muốn ngừng sử dụng banner này?"
+            unarchive_confirm: "Bạn có muốn sử dụng lại banner này?"
+            delete: "Xóa banner"
+          new:
+            banners: "Tất cả banner"
+            create: "Thêm banner"
+          edit:
+            banners: "Tất cả banner"
+            create: "Thêm banner"
+          form:
+            name: "Tên banner"
+            enter_name: "Nhập tên cho banner"
+            category: "Chuyên mục/kiểu kích thước"
+            link_url: "Link URL"
+            enter_link_url: "Nhập URL cần để gắn vào banner"
+            choose_category: "Chọn chuyên mục/kiểu tỉ lệ cho banner"
+        categories:
+          create:
+            success: "Thêm chuyên mục thành công."
+          update:
+            success: "Chuyên mục đã được cập nhật."
+          destroy:
+            success: "Xóa chuyên mục thành công."
+          delete_all:
+            success: "Các chuyên mục vừa chọn đã được xóa thành công."
+          archive: 
+            success: "Chuyên mục đã được ngưng sử dụng thành công."
+          unarchive: 
+            success: "Chuyên mục đã được sử dụng lại thành công."
+          archive_all: 
+            success: "Các chuyên mục vừa chọn đã ngưng sử dụng thành công."
+          unarchive_all: 
+            success: "Các chuyên mục vừa chọn đã được sử dụng lại thành công."
+          index:
+            categories: "Tất cả chuyên mục"
+            archive_confirm: "Bạn có muốn ngưng sử dụng các chuyên mục đã chọn?"
+            unarchive_confirm: "Bạn có muốn sử dụng lại các chuyên mục đã chọn?"
+            delete: "Xóa chuyên mục"
+            create: "Thêm chuyên mục"
+            name: "Tên chuyên mục"
+            size: "Kích thước"
+          list:
+            name: "Tên chuyên mục"
+            size: "Kích thước"
+            archive_confirm: "Bạn có muốn ngưng sử dụng chuyên mục này?"
+            unarchive_confirm: "Bạn có muốn sử dụng lại chuyên mục này?"
+            delete: "Xóa chuyên mục"
+            no_matching_records_found: "Danh sách chuyên mục không được tìm thấy"
+          new:
+            categories: "Tất cả chuyên mục"
+            create: "Thêm chuyên mục"
+          edit:
+            categories: "Tất cả chuyên mục"
+            create: "Thêm chuyên mục"
+          form:
+            name: "Tên chuyên mục"
+            image_scale: "Kiểu tỉ lệ"
+            width: "Chiều rộng (Width)"
+            placeholder_width: "Nhập tỉ lệ chiều rộng của hình"
+            height: "Chiều cao (Height)"
+            placeholder_height: "Nhập tỉ lệ chiều cao của hình"
+            placeholder_name: "Nhập tên chuyên mục cho banner"
+  activerecord:
+    attributes:
+      erp/banners/banner:
+        image: "Hình ảnh"
+        name: "Tên banner"
+        scale: "Chuyên mục/Kiểu banner"
+        image_url: "URL hình ảnh"
+      erp/banners/category:
+        name: "Tên chuyên mục"
+        width: "Chiều rộng"
+        height: "Chiều cao"
+        image_scale: "Kiểu tỉ lệ"
+    errors:
+      models:
+        erp/banners/banner:
+          attributes:
+            image:
+              blank: "không được để trống"
+            name:
+              blank: "không được để trống"
+            scale: 
+              blank: "không được để trống"
+            image_url: 
+              blank: "không được để trống"
+        erp/banners/category:
+          attributes:
+            name:
+              blank: "không được để trống"
+            width:
+              blank: "không được để trống"
+            height:
+              blank: "không được để trống"
+            image_scale:
+              blank: "không được để trống"

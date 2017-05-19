@@ -1,0 +1,49 @@
+<%= form_for([erp_banners, :backend, category]) do |f| %>
+    <div class="portlet light bordered">
+        <div class="portlet-body">
+            <%= erp_form_control("text", {
+                name: 'category[name]',
+                value: category.name,                   
+                label: t('.name'),
+                placeholder: t('.placeholder_name'),
+                required: true,
+                errors: category.errors.full_messages_for(:name)
+            }) %>
+            <div class="row">
+                <div class="col-md-6">
+                    <%= erp_form_control("text", {
+                        name: 'category[width]',
+                        value: category.width,                   
+                        label: t('.width'),
+                        placeholder: t('.placeholder_width'),
+                        required: true,
+                        errors: category.errors.full_messages_for(:width)
+                    }) %>
+                </div>
+                <div class="col-md-6">
+                    <%= erp_form_control("text", {
+                        name: 'category[height]',
+                        value: category.height,                   
+                        label: t('.height'),
+                        placeholder: t('.placeholder_height'),
+                        required: true,
+                        errors: category.errors.full_messages_for(:height)
+                    }) %>
+                </div>
+            </div>
+            <%= erp_form_control('select', {
+                label: t('.image_scale'),
+                name: 'category[image_scale]',
+                value: category.image_scale,
+                options: Erp::Banners::Category.get_image_scale_options()
+            }) %>
+        </div>
+    </div>
+    <%= erp_component('button/save', {
+        text: t('submit')
+    }) %>
+    <%= erp_component('button/cancel', {
+        text: t('cancel'),
+        href: erp_banners.backend_categories_path
+    }) %>
+<% end %>
