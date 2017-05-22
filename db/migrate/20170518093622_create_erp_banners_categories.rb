@@ -6,6 +6,7 @@ class CreateErpBannersCategories < ActiveRecord::Migration[5.0]
       t.integer :height
       t.string :image_scale
       t.boolean :archived, default: false
+      t.string :position
       t.references :creator, index: true, references: :erp_users
 
       t.timestamps

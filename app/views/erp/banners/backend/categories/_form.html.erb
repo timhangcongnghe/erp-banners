@@ -37,6 +37,12 @@
                 value: category.image_scale,
                 options: Erp::Banners::Category.get_image_scale_options()
             }) %>
+            <%= erp_form_control('select', {
+                label: t('.position'),
+                name: 'category[position]',
+                value: category.position,
+                options: Erp::Banners::Category.get_position_options()
+            }) %>
         </div>
     </div>
     <%= erp_component('button/save', {
