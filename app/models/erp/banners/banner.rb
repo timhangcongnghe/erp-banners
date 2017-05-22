@@ -2,6 +2,7 @@ module Erp::Banners
   class Banner < ApplicationRecord
     belongs_to :creator, class_name: 'Erp::User'
     belongs_to :category
+    after_save :recreate_thumbs
     
     mount_uploader :image_url, Erp::Banners::BannerImageUploader
     
@@ -11,6 +12,10 @@ module Erp::Banners
 			message: 'URL hình ảnh phải có định dạng: GIF, JPG hoặc PNG.'
 		}
 		validates :name, :category_id, presence: true
+		
+		def recreate_thumbs
+			self.image_url.recreate_versions!
+		end
     
     # get categories active
     def self.get_active

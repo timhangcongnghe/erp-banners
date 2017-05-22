@@ -32,6 +32,14 @@ module Erp::Banners
       ]
     end
     
+    after_save :recreate_thumbs
+    
+    def recreate_thumbs
+			banners.each do |s|
+				s.recreate_thumbs
+			end
+		end
+    
     # get categories active
     def self.get_active
 			self.where(archived: false).order("created_at DESC")

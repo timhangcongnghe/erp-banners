@@ -35,20 +35,56 @@ module Erp
       # version :thumb do
       #   process resize_to_fit: [50, 50]
       # end
+      
+      # Used for backend
       version :system do
         process resize_to_fill: [150, 150]
       end
       version :system_logo do
         process resize_to_fill: [0, 25]
       end
+      version :smaller do
+				process :resize_to_fill => [0, 50]
+			end
       version :banner_img do
 				process :resize_to_fill => [100, 0]
 			end
       version :small do
 				process :resize_to_fill => [0, 75]
 			end
-      version :smaller do
-				process :resize_to_fill => [0, 50]
+      
+      # Used for frontend
+#      version :slider do
+#				process :resize_to_fill => [904, 449]
+#			end
+#      version :block_banner do
+#				process :resize_to_fill => [292, 180]
+#			end
+#      version :long_banner do
+#				process :resize_to_fill => [1170, 100]
+#			end
+#      version :service_banner do
+#				process :resize_to_fill => [364, 164]
+#			end
+      
+      # Thumb size
+			version :thumb do
+				process :banner_resize
+			end 
+			
+			# Thumb size
+			def banner_resize
+				if model.category.present? 
+					if model.category.image_scale == "fill"
+						resize_to_fill(model.category.width, model.category.height)
+					elsif model.category.image_scale == "fit"
+						resize_to_fit(model.category.width, model.category.height)
+					else
+						resize_to_fill(904, 449)
+					end
+				else
+					resize_to_fill(904, 449)
+				end
 			end
     
       # Add a white list of extensions which are allowed to be uploaded.
