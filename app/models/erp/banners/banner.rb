@@ -118,5 +118,26 @@ module Erp::Banners
     def category_name
       category.present? ? category.name : ''
     end
+    
+    # get banner with position
+    def self.get_home_sliders
+			self.get_active.joins(:category).where(erp_banners_categories: {position: Erp::Banners::Category::POSITION_HOME_SLIDESHOW})
+		end
+    
+    def self.get_home_block_banners
+			self.get_active.joins(:category).where(erp_banners_categories: {position: Erp::Banners::Category::POSITION_HOME_BLOCK_BANNER})
+		end
+    
+    def self.get_home_service_banners
+			self.get_active.joins(:category).where(erp_banners_categories: {position: Erp::Banners::Category::POSITION_HOME_SERVICE})
+		end
+    
+    def self.get_home_long_banners
+			self.get_active.joins(:category).where(erp_banners_categories: {position: Erp::Banners::Category::POSITION_HOME_LONG_BANNER})
+		end
+    
+    def self.get_category_banners
+			self.get_active.joins(:category).where(erp_banners_categories: {position: Erp::Banners::Category::POSITION_CATEGORY_BANNER})
+		end
   end
 end
