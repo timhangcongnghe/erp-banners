@@ -10,6 +10,8 @@ Erp::Banners::Engine.routes.draw do
           put 'unarchive_all'
           put 'archive'
           put 'unarchive'
+          put 'move_up'
+          put 'move_down'
         end
       end
       resources :categories do

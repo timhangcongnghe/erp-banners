@@ -28,6 +28,9 @@
                     <%= t('created_at') %>
                 </th>
             <% end %>
+            <th width="7%" class="sortable text-nowrap" sort-by='erp_banners_banners.custom_order'>
+                <%= t('custom_order') %>
+            </th>
             <th width="7%"><%= t('actions') %></th>
         </tr>
     </thead>
@@ -46,7 +49,7 @@
                 <% end %>
                 <% if get_columns(params).include?("name") %>
                     <td>
-                        <%= link_to banner.name, erp_banners.edit_backend_banner_path(banner), class: 'title' %>                        
+                        <%= link_to banner.name, erp_banners.edit_backend_banner_path(banner), class: 'title' %>
                     </td>
                 <% end %>
                 <% if get_columns(params).include?("category") %>
@@ -73,6 +76,14 @@
                 <% if get_columns(params).include?("created_at") %>
                     <td><%= banner.created_at.strftime("%d/%m/%Y") %></td>
                 <% end %>
+                <td class="text-center text-semibold">
+                    <%= erp_datalist_order_column({
+                        item: banner,
+                        move_up_url: erp_banners.move_up_backend_banners_path(id: banner),
+                        move_down_url: erp_banners.move_down_backend_banners_path(id: banner),
+                        sort_by: 'erp_banners_banners.custom_order'
+                    }) %>
+                </td>
                 <td class="text-right">
                     <%= erp_datalist_row_actions(
                         [
@@ -116,5 +127,5 @@
 <% if @banners.empty? %>
     <div class="datalist-empty-line"><%= t('.no_matching_records_found') %></div>
 <% end %>
-        
+
 <%= erp_datalist_pagination(@banners) %>

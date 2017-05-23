@@ -1,5 +1,7 @@
 module Erp::Banners
   class Banner < ApplicationRecord
+		include Erp::CustomOrder
+		
     belongs_to :creator, class_name: 'Erp::User'
     belongs_to :category
 
