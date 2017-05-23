@@ -12,6 +12,11 @@
                     <%= t('.name') %>
                 </th>
             <% end %>
+            <% if get_columns(params).include?("category") %>
+                <th>
+                    <%= t('.category') %>
+                </th>
+            <% end %>
             <% if get_columns(params).include?("status") %>
                 <th><%= t('status') %></th>
             <% end %>
@@ -42,6 +47,11 @@
                 <% if get_columns(params).include?("name") %>
                     <td>
                         <%= link_to banner.name, erp_banners.edit_backend_banner_path(banner), class: 'title' %>                        
+                    </td>
+                <% end %>
+                <% if get_columns(params).include?("category") %>
+                    <td>
+                        <%= link_to banner.category_name %>                        
                     </td>
                 <% end %>
                 <% if get_columns(params).include?("status") %>
