@@ -7,6 +7,7 @@ vi:
         sidebar:
           banner: "Quản lý banner"
           banners: "Tất cả banner"
+          categories: "Chuyên mục"
   erp:
     banners:
       backend:
