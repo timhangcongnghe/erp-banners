@@ -12,6 +12,7 @@ module Erp::Banners
     POSITION_HOME_SERVICE = 'home_service_banner'
     POSITION_HOME_LONG_BANNER	= 'home_long_banner'
     POSITION_CATEGORY_BANNER = 'category_banner'
+    POSITION_BRAND_IDENTITY = 'brand_identity'
     
     # get image scale
     def self.get_image_scale_options

@@ -5,61 +5,63 @@ vi:
     erp:
       backend:
         sidebar:
-          banner: "Quản lý banner"
-          banners: "Tất cả banner"
-          categories: "Chuyên mục"
+          banner: "Quản lý hình ảnh"
+          banners: "Tất cả hình ảnh"
+          categories: "Chuyên mục/chủ đề"
   erp:
     banners:
       backend:
         banners:
           create:
-            success: "Thêm banner thành công."
+            success: "Thêm hình ảnh thành công."
           update:
-            success: "Banner đã được cập nhật."
+            success: "Hình ảnh đã được cập nhật."
           destroy:
-            success: "Xóa banner thành công."
+            success: "Xóa hình ảnh thành công."
           delete_all:
-            success: "Các banner vừa chọn đã được xóa thành công."
+            success: "Các hình ảnh vừa chọn đã được xóa thành công."
           archive: 
-            success: "Banner đã được ngưng sử dụng."
+            success: "Hình ảnh đã được ngưng sử dụng."
           unarchive: 
-            success: "Banner đã sẵn sàng để sử dụng lại."
+            success: "Hình ảnh đã sẵn sàng để sử dụng lại."
           archive_all: 
-            success: "Các banner vừa chọn đã được ngưng sử dụng."
+            success: "Các hình ảnh vừa chọn đã được ngưng sử dụng."
           unarchive_all: 
-            success: "Các banner vừa chọn đã sẵn sàng để sử dụng lại."
+            success: "Các hình ảnh vừa chọn đã sẵn sàng để sử dụng lại."
           index:
-            banners: "Tất cả banner"
-            create: "Thêm banner"
+            banners: "Tất cả hình ảnh"
+            create: "Thêm hình ảnh"
             image: "Hình ảnh"
-            name: "Tên banner"
+            name: "Tên hình ảnh"
             link_url: "Link URL"
             category: "Chuyên mục/Vị trí"
-            archive_confirm: "Bạn có muốn ngừng sử dụng các banner này?"
-            unarchive_confirm: "Bạn có muốn sử dụng lại các banner này?"
-            delete: "Xóa banner"
+            archive_confirm: "Bạn có muốn ngừng sử dụng các hình ảnh này?"
+            unarchive_confirm: "Bạn có muốn sử dụng lại các hình ảnh này?"
+            delete: "Xóa hình ảnh"
           list:
             image: "Hình ảnh"
-            name: "Tên banner"
+            name: "Tên hình ảnh"
             link_url: "Linh URL"
             category: "Chuyên mục/Vị trí"
-            no_matching_records_found: "Danh sách banner không được tìm thấy"
-            archive_confirm: "Bạn có muốn ngừng sử dụng banner này?"
-            unarchive_confirm: "Bạn có muốn sử dụng lại banner này?"
-            delete: "Xóa banner"
+            no_matching_records_found: "Danh sách hình ảnh không được tìm thấy"
+            archive_confirm: "Bạn có muốn ngừng sử dụng hình ảnh này?"
+            unarchive_confirm: "Bạn có muốn sử dụng lại hình ảnh này?"
+            delete: "Xóa hình ảnh"
           new:
-            banners: "Tất cả banner"
-            create: "Thêm banner"
+            banners: "Tất cả hình ảnh"
+            create: "Thêm hình ảnh"
           edit:
-            banners: "Tất cả banner"
-            create: "Thêm banner"
+            banners: "Tất cả hình ảnh"
+            create: "Thêm hình ảnh"
           form:
-            name: "Tên banner"
-            enter_name: "Nhập tên cho banner"
+            name: "Tên hình ảnh"
+            enter_name: "Nhập tên cho hình ảnh"
             category: "Chuyên mục/kiểu kích thước"
             link_url: "Link URL"
-            enter_link_url: "Nhập URL cần để gắn vào banner"
-            choose_category: "Chọn chuyên mục/kiểu tỉ lệ cho banner"
+            enter_link_url: "Nhập URL cần để gắn vào hình ảnh"
+            choose_category: "Chọn chuyên mục/kiểu tỉ lệ cho hình ảnh"
+            note: "Ghi chú"
+            enter_note: "Nhập nội dung ghi chú"
         categories:
           create:
             success: "Thêm chuyên mục thành công."
@@ -110,8 +112,8 @@ vi:
     attributes:
       erp/banners/banner:
         image: "Hình ảnh"
-        name: "Tên banner"
-        scale: "Chuyên mục/Kiểu banner"
+        name: "Tên hình ảnh"
+        scale: "Chuyên mục/Kiểu hình ảnh"
         image_url: "URL hình ảnh"
       erp/banners/category:
         name: "Tên chuyên mục"

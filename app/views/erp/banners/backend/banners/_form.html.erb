@@ -54,7 +54,18 @@
                                     name: 'banner[link_url]',
                                     value: banner.link_url,                   
                                     label: t('.link_url'),
-                                    placeholder: t('.enter_link_url')
+                                    placeholder: t('.enter_link_url'),
+                                    rows: 1
+                                }) %>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <%= erp_form_control("textarea", {
+                                    name: 'banner[note]',
+                                    value: banner.note,                   
+                                    label: t('.note'),
+                                    placeholder: t('.enter_note')
                                 }) %>
                             </div>
                         </div>
