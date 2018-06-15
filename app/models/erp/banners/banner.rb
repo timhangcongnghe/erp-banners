@@ -22,7 +22,7 @@ module Erp::Banners
 
     # get categories active
     def self.get_active
-			self.where(archived: false).order("created_at DESC")
+			self.where(archived: false)
 		end
 
     # Filters
