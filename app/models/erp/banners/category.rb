@@ -110,8 +110,12 @@ module Erp::Banners
     end
     
     # data for dataselect ajax
-    def self.dataselect(keyword='')
-      query = self.all
+    def self.dataselect(keyword='', params='')
+      query = self.where(archived: false)
+      
+      if params[:position].present?
+        query = query.where(position: params[:position])
+      end
       
       if keyword.present?
         keyword = keyword.strip.downcase
