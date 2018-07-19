@@ -14,6 +14,7 @@ module Erp::Banners
     POSITION_CATEGORY_BANNER = 'category_banner'
     POSITION_BRAND_IDENTITY = 'brand_identity'
     POSITION_ADS_BANNER = 'ads_banner'
+    POSITION_ALBUM = 'album'
     
     # get image scale
     def self.get_image_scale_options
