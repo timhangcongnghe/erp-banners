@@ -14,6 +14,19 @@
     }) %>
 <% end %>
 
+<% content_for :global_filter do %>
+    <div class="row top-datalist">
+        <div class="col-md-3">
+            <%= erp_form_control("dataselect", {
+                name: 'category_id',
+                label: 'Chuyên mục',
+                placeholder: 'Tìm theo chuyên mục',
+                url: erp_banners.dataselect_backend_categories_path(format: 'json'),
+            }) %>
+        </div>
+    </div>
+<% end %>
+
 <%= erp_datalist(
     url: erp_banners.list_backend_banners_path,
     keywords: [

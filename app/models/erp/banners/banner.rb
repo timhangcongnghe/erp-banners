@@ -63,6 +63,14 @@ module Erp::Banners
 
       # join with categories table for search with category
       query = query.joins(:category)
+      
+      # global filter
+      global_filter = params[:global_filter]
+      if global_filter.present?
+				if global_filter[:category_id].present?
+					query = query.where(category_id: global_filter[:category_id])
+				end
+			end
 
       # join with users table for search creator
       query = query.joins(:creator)
